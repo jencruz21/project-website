@@ -29,11 +29,7 @@ const CartItemsSchema = new mongoose.Schema({
     ci_image_path: {
         type: String,
         required: true
-    },
-    ci_transaction_id: {
-        type: String,
-        required: true
     }
-});
+}, { timestamps: true });
 
 exports.CartItem = mongoose.model("cartItems", CartItemsSchema);

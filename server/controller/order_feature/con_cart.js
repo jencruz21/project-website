@@ -17,11 +17,30 @@ exports.createCartItem = (req, res) => {
         res.status(400).json(error.details);
     }
 
-    
+    const model = new CartItem({
+        
+    })
 }
 
-exports.deleteCartItemById = (req, res) => {
+exports.deleteCartItemById = async (req, res) => {
+    const idObject = joi.object({
+        _id: joi.string().required()
+    })
 
+    const {error, value} = idObject.validate(req.body);
+
+    if (error) {
+        return res.status(400).send(error);
+    }
+
+    try {
+        const response = await CartItem.findByIdAndDelete(value._id);
+        return res.status(200).send(response);
+    } catch (error) {
+        return res.status(400).send({
+            message: error.name + ": " + error.message
+        });
+    }
 }
 
 exports.fetchCartItems = async (req, res) => {
