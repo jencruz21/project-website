@@ -1,7 +1,7 @@
 const CartItem = require('../../model/order_feature/w_cartItems');
 const joi = require('joi');
 
-exports.createCartItem = (req, res) => {
+exports.createCartItem = async (req, res) => {
     const CartItemObject = joi.object({
         ci_cart_item_name: joi.string().required(),
         ci_qty: joi.number().required(),
@@ -17,8 +17,22 @@ exports.createCartItem = (req, res) => {
     }
 
     const model = new CartItem({
-
+        ci_cart_item_name: value.ci_cart_item_name,
+        ci_qty: value.ci_qty,
+        ci_rice_category: value.ci_rice_category,
+        ci_unit: value.ci_unit,
+        ci_user_id: value.ci_user_id,
+        ci_image_path: value.ci_image_path
     })
+
+    try {
+        const response = await model.save();
+        return res.status(200).send(response);
+    } catch (error) {
+        return res.status(400).send({
+            message: error.message
+        });
+    }
 }
 
 exports.deleteCartItemById = async (req, res) => {
