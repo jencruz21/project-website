@@ -8,8 +8,7 @@ exports.createCartItem = (req, res) => {
         ci_rice_category: joi.string().required(),
         ci_unit: joi.string().required(),
         ci_user_id: joi.string().required(),
-        ci_image_path: joi.string().required(),
-        ci_transaction_id: joi.string().required()
+        ci_image_path: joi.string().required()
     });
 
     const { error, value } = CartItemObject.validate(req.body);
@@ -18,7 +17,7 @@ exports.createCartItem = (req, res) => {
     }
 
     const model = new CartItem({
-        
+
     })
 }
 
