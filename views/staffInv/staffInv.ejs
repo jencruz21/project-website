@@ -1,0 +1,163 @@
+<%- include('include/header') %>
+
+
+<div class="row">
+    <div class="col-sm-6 mobile-inputs">
+        <hr>
+        <h4 class="title">Invoice</h4>
+        <hr>
+        <form action="/admin/api/inv" method="post" id="add_customer">
+            <div class="form-group">
+                <input type="text" name="iItem" class="form-control form-txt-primary" placeholder="Item">
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="iType" class="form-control form-txt-primary" placeholder="Type">
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" name="iQuantity" class="form-control form-txt-primary" placeholder="Quantity">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="number" name="iRetail" class="form-control form-txt-primary" placeholder="Retail">
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" name="i5kg" class="form-control form-txt-primary" placeholder="5kg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="number" name="i10kg" class="form-control form-txt-primary" placeholder="10kg">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="iMarket" class="form-control form-txt-primary" placeholder="Market">
+                </div>
+               
+            </div>
+            <div class="row" style="margin-top: 1rem;margin-bottom: 1rem;">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                    </div>
+                </div>
+        
+    </div>
+    <div class="col-sm-6 mobile-inputs">
+        <hr>
+        <h4 class="title">Database</h4>
+        <hr>
+     
+            
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="iTenc" placeholder="TenC">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="iws1" placeholder="WS1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="iws2" placeholder="WS2">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="isp1" placeholder="SP1">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="isp2" placeholder="SP2">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="iDivert" placeholder="Divert">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="iCapital" placeholder="Capital">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="iRoc" placeholder="ROC">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>  
+<div class="card">
+    <div class="card-header">
+        <h5>Invoice List</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+               
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Item</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                        <th>Retail</th>
+                        <th>5kg</th>
+                        <th>10kg</th>
+                        <th>Market</th>
+                        <th>TENC</th>
+                        <th>WS1</th>
+                        <th>WS2</th>
+                        <th>SP1</th>
+                        <th>SP2</th>
+                        <th>Divert</th>
+                        <th>Capital</th>
+                        <th>ROC</th>
+                    </tr>
+                   
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < inv.length; i++) { %>
+                    <tr>
+                      
+                        <th><%= i + 1 %></th>
+                       <td><%= inv[i].i_item %></td>
+                       <td><%= inv[i].i_type %></td>
+                       <td><%= inv[i].i_quantity %></td>
+                       <td><%= inv[i].i_retail %></td>
+                       <td><%= inv[i].i_5kg %></td>
+                       <td><%= inv[i].i_10kg %></td>
+                       <td><%= inv[i].i_market %></td>
+                       <td><%= inv[i].i_tenC %></td>
+                       <td><%= inv[i].i_ws1 %></td>
+                       <td><%= inv[i].i_ws2 %></td>
+                       <td><%= inv[i].i_sp1 %></td>
+                       <td><%= inv[i].i_sp2 %></td>
+                       <td><%= inv[i].i_divert %></td>
+                       <td><%= inv[i].i_capital %></td>
+                       <td><%= inv[i].i_roc %></td>
+
+                       <td>
+                        <a class="btn border-shadow delete" data-id=<%= inv[i]._id%> >
+                            <span class="text-gradient"><i class="fas fa-times" style="color: rgb(245, 5, 5);"></i></span>
+                        </a>
+                       </td>
+
+                    </tr>
+                    <% } %>
+            
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<%- include('include/footer') %>

@@ -1,0 +1,116 @@
+<%- include('include/header') %>
+<div class="row">
+    <div class="col-sm-6 mobile-inputs">
+        <hr>
+        <h4 class="title">Customer History</h4>
+        <hr>
+        <form action="/admin/api/customerHis" method="post" id="add_customer">
+            <div class="form-group">
+                <input type="text" name="chName" class="form-control form-txt-primary" placeholder="Customer Name">
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="chDateCTR" class="form-control form-txt-primary" placeholder="Date CTR">
+                </div>
+                <div class="col-sm-6">
+                    <input type="datetime-local" name="chDate" class="form-control form-txt-primary" placeholder="Date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="time" name="chTime" class="form-control form-txt-primary" placeholder="Time">
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" name="chPrevRem" class="form-control form-txt-primary" placeholder="Prev Rem">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="number" name="chPrevBal" class="form-control form-txt-primary" placeholder="Prev Bal">
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" name="chNewRem" class="form-control form-txt-primary" placeholder="New Rem">
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="text" name="chSt" class="form-control form-txt-primary" placeholder="Street" style="margin-top: 1rem;margin-bottom: 1rem;">
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" name="chRem" class="form-control form-txt-primary" placeholder="Rem" style="margin-top: 1rem;margin-bottom: 1rem;">
+                </div>
+               
+            </div>
+            <div class="row" style="margin-top: 1rem;margin-bottom: 1rem;">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                    </div>
+                </div>
+                
+        </form>
+    </div>
+</div>  
+<div class="card">
+    <div class="card-header">
+        <h5>Customer List</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Date CTR</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Prev Rem</th>
+                        <th>Prev Bal</th>
+                        <th>New Rem</th>
+                        <th>Street Address</th>
+                        <th>Rem</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < customerHis.length; i++) { %>
+                    <tr>
+                        <th scope="row"><%= i + 1 %></th>
+                        <td><%= customerHis[i].ch_name %></td>
+                        <td><%= customerHis[i].ch_dateCTR %></td>
+                        <td><%= customerHis[i].ch_date %></td>
+                        <td><%= customerHis[i].ch_time %></td>
+                        <td><%= customerHis[i].ch_prevRem %></td>
+                        <td><%= customerHis[i].ch_prevBal %></td>
+                        <td><%= customerHis[i].ch_newRem%></td>
+                        <td><%= customerHis[i].ch_st%></td>
+                        <td><%= customerHis[i].ch_rem%></td>
+                        
+
+                        <td>
+                            <a class="btn border-shadow delete" data-id=<%= customerHis[i]._id%>>
+                                <span class="text-gradient"><i class="fas fa-times" style="color: rgb(245, 5, 5);"></i></span>
+                            </a>
+                        </td>
+
+                    </tr>
+                    <% } %>
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('include/footer') %>

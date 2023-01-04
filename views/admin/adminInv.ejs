@@ -1,0 +1,86 @@
+
+<%- include('include/header') %>
+
+<div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+    <div class="table-responsive">
+        <table class="table table-dark">
+           
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Date CTR</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Item</th>
+                    <th>Type</th>
+                    <th>Prev</th>
+                    <th>Added</th>
+                    <th>New</th>
+                    <th>Rem</th>
+                    <th>EB</th>
+                    <th>Rice Mill</th>
+                    <th>Driver</th>
+                    <th>Plate</th>
+                    <th>Receipt</th>
+                    <th>PRP</th>
+                    <th>P15</th>
+                    <th>P110</th>
+                    <th>PMP</th>
+                    <th>PTC</th>
+                    <th>PW1</th>
+                    <th>PW2</th>
+                    <th>PSP1</th>
+                    <th>PSP2</th>
+                    <th>P-Divert</th>
+                 
+
+              
+                </tr>
+               
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < invHis.length; i++) { %>
+             
+                <tr>
+                  
+                        <th><%= i + 1 %></th>
+                        <td><%= invHis[i].ih_dateCTR %></td>
+                        <td><%= invHis[i].ih_date %></td>
+                        <td><%= invHis[i].ih_time %></td>
+                        <td><%= invHis[i].ih_item %></td>
+                        <td><%= invHis[i].ih_type %></td>
+                        <td><%= invHis[i].ih_prev %></td>
+                        <td><%= invHis[i].ih_added %></td>
+                        <td><%= invHis[i].ih_new %></td>
+                        <td><%= invHis[i].ih_rem %></td>
+                        <td><%= invHis[i].ih_eb %></td>
+                        <td><%= invHis[i].ih_riceMill %></td>
+                        <td><%= invHis[i].ih_driver %></td>
+                        <td><%= invHis[i].ih_plate %></td>
+                        <td><%= invHis[i].ih_reciept %></td>
+                        <td><%= invHis[i].ih_prp %></td>
+                        <td><%= invHis[i].ih_p15 %></td>
+                        <td><%= invHis[i].ih_p110 %></td>
+                        <td><%= invHis[i].ih_pmp %></td>
+                        <td><%= invHis[i].ih_ptc %></td>
+                        <td><%= invHis[i].ih_pw1 %></td>
+                        <td><%= invHis[i].ih_pw2 %></td>
+                        <td><%= invHis[i].ih_psp1 %></td>
+                        <td><%= invHis[i].ih_psp2 %></td>
+                        <td><%= invHis[i].ih_pDivert %></td>
+
+                 
+
+                </tr>
+                <% } %>
+           
+        
+             
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+
+<%- include('include/footer') %>

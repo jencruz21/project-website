@@ -1,0 +1,57 @@
+<%- include('include/header') %>
+ 
+<div class="card">
+    <div class="card-header">
+        <h5>Customer List</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Rice Name</th>
+                        <th>Per Kilo</th>
+                        <th>Market Price</th>
+                        <th>Ten Kaban</th>
+                        <th>Whole Sale Market</th>
+                        <th>Whole Sale Price</th>
+                        <th>Special Price</th>
+                        <th>Divert Price</th>
+                        <th>Good as Cash</th>
+                        <th>Divert Salin Truck</th>
+                        <th>Additional Less ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% rice.forEach(data => { %>
+                        <tr>
+                            <td><%= data.r_rice_name %></td>
+                            <td><%= data.r_per_kilo %></td>
+                            <td><%= data.r_market_price %></td>
+                            <td><%= data.r_ten_kaban %></td>
+                            <td><%= data.r_whole_sale_market %></td>
+                            <td><%= data.r_whole_sale_price %></td>
+                            <td><%= data.r_special_price %></td>
+                            <td><%= data.r_divert_price %></td>
+                            <td><%= data.r_good_as_cash %></td>
+                            <td><%= data.r_divert_salin_truck %></td>
+                            <td><%= data.r_additional_less_id %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('include/footer') %>

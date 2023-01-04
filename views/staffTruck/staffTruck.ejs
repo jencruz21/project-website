@@ -1,0 +1,90 @@
+<%- include('include/header') %>
+<div class="row">
+    <div class="col-sm-6 mobile-inputs">
+        <hr>
+        <h4 class="title">Tracking</h4>
+        <hr>
+        <form action="/admin/api/truckRoute" method="post" id="add_customer">
+            <div class="form-group">
+                <input type="text" name="rPlateNum" class="form-control form-txt-primary" placeholder="Plate #">
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="rRouteLocation" class="form-control form-txt-primary" placeholder="Route Location">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="rRiceQuantity" class="form-control form-txt-primary" placeholder="Rice Quantity">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="rRiceType" class="form-control form-txt-primary" placeholder="Rice Type">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="rKiloQuantity" class="form-control form-txt-primary" placeholder="Kilo Quantity">
+                </div>
+            </div>
+           
+            <div class="row" style="margin-top: 1rem;margin-bottom: 1rem;">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>  
+<div class="card">
+    <div class="card-header">
+        <h5>Customer List</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Plate #</th>
+                        <th>Route Location</th>
+                        <th>Rice Quantity</th>
+                        <th>Rice Type</th>
+                        <th>Kilo Quantity</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% for(var i = 0; i < truck.length; i++) { %>
+                    <tr>
+                        <th scope="row">gfgfds</th>
+                        <td><%= truck[i].r_plateNum %></td>
+                        <td><%= truck[i].r_routeLocation%></td>
+                        <td><%= truck[i].r_riceQuantity%></td>
+                        <td><%= truck[i].r_riceType%></td>
+                        <td><%= truck[i].r_kiloQuantity%></td>
+                        <td>
+                            <a class="btn border-shadow delete" data-id=<%= truck[i]._id%> >
+                                <span class="text-gradient"><i class="fas fa-times" style="color: rgb(245, 5, 5);"></i></span>
+                            </a>
+                        </td>
+
+                    </tr>
+                    <% } %>
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('include/footer') %>

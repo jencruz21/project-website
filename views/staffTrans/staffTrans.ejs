@@ -1,0 +1,323 @@
+
+<%- include('include/header') %>
+
+
+
+
+<div class="row">
+    <div class="col-sm-6 mobile-inputs">
+        <hr>
+        <h4 class="title">Transaction</h4>
+        <hr>
+        <form action="/admin/api/trans" method="post" id="add_customer">
+            <div class="form-group row">
+                <div class="col-sm-6">
+                  
+                    <input type="date" name="tDateCTR" class="form-control form-txt-primary" placeholder="Date CTR">
+                </div>
+                <div class="col-sm-6">
+                 
+                    <input type="date" name="tDate" class="form-control form-txt-primary" placeholder="Date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="time" name="tTime" class="form-control form-txt-primary" placeholder="Time">
+                </div>
+                <div class="col-sm-6">
+                    <input type="number" name="tEb" class="form-control form-txt-primary" placeholder="EB">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="tAr" class="form-control form-txt-primary" placeholder="AR">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="tName" class="form-control form-txt-primary" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="tItems" class="form-control form-txt-primary" placeholder="Items">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="tCavans" class="form-control form-txt-primary" placeholder="Cavans">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="tSubtotal" class="form-control form-txt-primary" placeholder="Subtotal">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="tPrevB" class="form-control form-txt-primary" placeholder="Prev-Bal">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="tPrevR" class="form-control form-txt-primary" placeholder="Prev-R">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="tAddons" class="form-control form-txt-primary" placeholder="Addons">
+                </div>
+               
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tLess" placeholder="Less">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tBackLoad" placeholder="BackLoad">
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tGrandTotal" placeholder="Grand Total">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tMcash" placeholder="M-Cash">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tAddress" placeholder="Address">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tOG" placeholder="OG">
+                </div>
+            </div>
+            <div class="form-group row">
+            <div class="col-sm-6">
+                <input type="text" class="form-control form-txt-primary" name="trid" placeholder="RID">
+            </div>
+        </div>
+
+            <div class="row" style="margin-top: 1rem;margin-bottom: 1rem;">
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+                    </div>
+                </div>
+                
+        
+    </div>
+    <div class="col-sm-6 mobile-inputs">
+        <hr>
+        <h4 class="title">Database</h4>
+        <hr>
+     
+            
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tCheckBal" placeholder="Check Bal">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tCheckNum" placeholder="Check Number">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="tCheckDate" class="form-control form-txt-primary" placeholder="Check Date">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="tMchange" class="form-control form-txt-primary" placeholder="M-Change">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" name="tNewR" class="form-control form-txt-primary" placeholder="New-R">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" name="tNewB" class="form-control form-txt-primary" placeholder="New-B">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tst" placeholder="ST">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tDredit" placeholder="Dr-edit">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tSiedit" placeholder="SI-Edit">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tOredit" placeholder="OR-edit">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tTranstype" placeholder="Transaction Type">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tDelR" placeholder="Deleted Record">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tDelL" placeholder="Deleted L">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tContact" placeholder="Contact">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tCuskey" placeholder="Customer Key">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tnotes" placeholder="Notes">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tPrevSt" placeholder="Prev-ST">
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control form-txt-primary" name="tPrevLt" placeholder="Prev-LT">
+                </div>
+               
+            </div>
+         
+            
+        </form>
+    </div>
+</div>  
+<div class="card">
+    <div class="card-header">
+        <h5>Invoice List</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+               
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date CTR</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>EB</th>
+                        <th>AR</th>
+                        <th>Name</th>
+                        <th>Items</th>
+                        <th>Cavan</th>
+                        <th>SubTotal</th>
+                        <th>Prev B</th>
+                        <th>Prev R</th>
+                        <th>Addons</th>
+                        <th>Less</th>
+                        <th>BackLoad</th>
+                        <th>Grand Total</th>
+                        <th>M-Cash</th>
+                        <th>Check Bal</th>
+                        <th>Check Num</th>
+                        <th>Check Date</th>
+                        <th>M-Change</th>
+                        <th>New-R</th>
+                        <th>New-B</th>
+                        <th>TST</th>
+                        <th>DR-Edit</th>
+                        <th>SI-Edit</th>
+                        <th>OR-Edit</th>
+                        <th>Trans Type</th>
+                        <th>Del-R</th>
+                        <th>Del-L</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>OG</th>
+                        <th>Cus-Key</th>
+                        <th>Notes</th>
+                        <th>Prev-St.</th>
+                        <th>Prev-Loc</th>
+                        <th>R-ID</th>
+
+                        
+                     
+
+                  
+                    </tr>
+                   
+                </thead>
+                <tbody>
+                 
+                    <% for(var i = 0; i < trans.length; i++) { %>
+                    <tr>
+                      
+                            <th><%= i + 1 %></th>
+                            <td><%= trans[i].t_dateCTR %></td>
+                            <td><%= trans[i].t_date %></td>
+                            <td><%= trans[i].t_time %></td>
+                            <td><%= trans[i].t_eb %></td>
+                            <td><%= trans[i].t_ar %></td>
+                            <td><%= trans[i].t_name %></td>
+                            <td><%= trans[i].t_items %></td>
+                            <td><%= trans[i].t_cavans %></td>
+                            <td><%= trans[i].t_subtotal %></td>
+                            <td><%= trans[i].t_prevB %></td>
+                            <td><%= trans[i].t_prevR %></td>
+                            <td><%= trans[i].t_addons %></td>
+                            <td><%= trans[i].t_less %></td>
+                            <td><%= trans[i].t_backLoad %></td>
+                            <td><%= trans[i].t_grandTotal %></td>
+                            <td><%= trans[i].t_mCash %></td>
+                            <td><%= trans[i].t_checkBal %></td>
+                            <td><%= trans[i].t_checkNum %></td>
+                            <td><%= trans[i].t_checkDate %></td>
+                            <td><%= trans[i].t_mChange %></td>
+                            <td><%= trans[i].t_newR %></td>
+                            <td><%= trans[i].t_newB %></td>
+                            <td><%= trans[i].t_st %></td>
+                            <td><%= trans[i].t_drEdit %></td>
+                            <td><%= trans[i].t_siEdit %></td>
+                            <td><%= trans[i].t_orEdit %></td>
+                            <td><%= trans[i].t_transType %></td>
+                            <td><%= trans[i].t_delR %></td>
+                            <td><%= trans[i].t_delL %></td>
+                            <td><%= trans[i].t_contact %></td>
+                            <td><%= trans[i].t_address %></td>
+                            <td><%= trans[i].t_OG %></td>
+                            <td><%= trans[i].t_cusKey %></td>
+                            <td><%= trans[i].t_notes %></td>
+                            <td><%= trans[i].t_prevSt %></td>
+                            <td><%= trans[i].t_prevLt %></td>
+                            <td><%= trans[i].t_rId %></td>
+                            <td>
+                                <a class="btn border-shadow delete" data-id=<%= trans[i]._id%> >
+                                    <span class="text-gradient"><i class="fas fa-times" style="color: rgb(245, 5, 5);"></i></span>
+                                </a>
+                               </td>
+                           
+
+                 
+
+                    </tr>
+                    <% } %>
+                  
+               
+            
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<%- include('include/footer') %>

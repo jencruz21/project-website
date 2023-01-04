@@ -1,0 +1,51 @@
+<%- include('include/header') %>
+<div class="card">
+    <div class="card-header">
+        <h5>Customer List</h5>
+        <!-- <span>use class <code>table-dark</code> inside table element</span> -->
+        <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                <li><i class="fa fa-window-maximize full-card"></i></li>
+                <li><i class="fa fa-minus minimize-card"></i></li>
+                <li><i class="fa fa-refresh reload-card"></i></li>
+                <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-block table-border-style" style="overflow-y:scroll;height:500px;">
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Plate #</th>
+                        <th>Route Location</th>
+                        <th>Rice Quantity</th>
+                        <th>Rice Type</th>
+                        <th>Kilo Quantity</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% for(var i = 0; i < truck.length; i++) { %>
+                    <tr>
+                        <th scope="row">gfgfds</th>
+                        <td><%= truck[i].r_plateNum %></td>
+                        <td><%= truck[i].r_routeLocation%></td>
+                        <td><%= truck[i].r_riceQuantity%></td>
+                        <td><%= truck[i].r_riceType%></td>
+                        <td><%= truck[i].r_kiloQuantity%></td>
+                       
+                    </tr>
+                    <% } %>
+                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('include/footer') %>
