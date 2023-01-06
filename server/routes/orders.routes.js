@@ -39,7 +39,7 @@ router.get("/register", routeService.checkoutPage);
 // APIs
 
 // PRODUCTS 
-router.post("/api/product/post");
+router.post("/api/product/post", ProductsController.createProduct);
 
 
 module.exports = router;
