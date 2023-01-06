@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const StoreTransactItemsSchema = require("w_storeTransactItems");
 
 const StoreTransactionsSchema = new mongoose.Schema({
     st_transaction_id: {
@@ -29,6 +30,7 @@ const StoreTransactionsSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
+    st_transaction_item_id: [StoreTransactItemsSchema]
 }, {
     timestamps: true
 });
