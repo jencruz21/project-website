@@ -4,4 +4,15 @@ const uuid = require("uuid");
 
 // create transaction
 // retrieve transaction items
-// 
+// fetch transaction details
+exports.createTransactions = async (req, res) => {
+
+}
+
+exports.getTransactionItems = async (req, res) => {
+
+}
+
+exports.getTransactionDetails = async (req, res) => {
+
+}
