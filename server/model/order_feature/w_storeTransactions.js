@@ -30,7 +30,7 @@ const StoreTransactionsSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
-    st_transaction_item_id: [StoreTransactItemsSchema]
+    st_transaction_items: [StoreTransactItemsSchema]
 }, {
     timestamps: true
 });

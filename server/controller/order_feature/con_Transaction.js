@@ -16,3 +16,7 @@ exports.getTransactionItems = async (req, res) => {
 exports.getTransactionDetails = async (req, res) => {
 
 }
+
+exports.submitTransactionItems = async (req, res) => {
+
+}
