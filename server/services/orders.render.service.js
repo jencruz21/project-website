@@ -17,3 +17,7 @@ exports.cartPage = (req, res) => {
 exports.checkoutPage = (req, res) => {
     res.status(200).render('ordering-system/checkout')
 }
+
+exports.loginPage = (req, res) => {
+    res.status(200).render('ordering-system/login');
+}

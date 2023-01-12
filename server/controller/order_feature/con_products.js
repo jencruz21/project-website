@@ -182,8 +182,9 @@ exports.fetchProductsNewlyArrived = async (req, res) => {
 //helper function increment sales by id
 exports.incrementSalesById = async (_id) => {
     try {
-        
+        const result = await Product.findOneAndUpdate({ _id:_id }, { $inc: { "products.p_sales": 1 } }, {new: true });
+        return result;
     } catch (error) {
-        
+        return error.message;
     }
 }

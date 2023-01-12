@@ -31,7 +31,7 @@ router.get("/checkout", routeService.checkoutPage);
 router.get("/user/details/:id", routeService.checkoutPage);
 
 // login page
-router.get("/login", routeService.checkoutPage);
+router.get("/login", routeService.loginPage);
 
 // registration page
 router.get("/register", routeService.checkoutPage);
