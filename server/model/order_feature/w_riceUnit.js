@@ -7,4 +7,4 @@ const RiceUnitSchema = new mongoose.Schema({
     }
 });
 
-exports.RiceUnit = mongoose.model("riceUnit", RiceUnitSchema);
+module.exports = mongoose.model("riceUnit", RiceUnitSchema);

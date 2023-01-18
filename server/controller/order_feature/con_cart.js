@@ -40,7 +40,7 @@ exports.deleteCartItemById = async (req, res) => {
         _id: joi.string().required()
     })
 
-    const {error, value} = idObject.validate(req.body);
+    const {error, value} = idObject.validate(req.query);
 
     if (error) {
         return res.status(400).send(error);

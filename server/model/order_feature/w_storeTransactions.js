@@ -35,4 +35,4 @@ const StoreTransactionsSchema = new mongoose.Schema({
     timestamps: true
 });
 
-exports.StoreTransactions = mongoose.model("StoreTransactions", StoreTransactionsSchema);
+module.exports = mongoose.model("StoreTransactions", StoreTransactionsSchema);

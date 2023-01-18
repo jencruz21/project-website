@@ -58,7 +58,7 @@ exports.deleteProductById = async (req, res) => {
         _id: joi.string().required()
     });
 
-    const {error,value} = idObject.validate(req.body);
+    const {error,value} = idObject.validate(req.query);
 
     if (error) {
         return res.status(400).send(error);
@@ -128,7 +128,7 @@ exports.fetchProductById = async (req, res) => {
         _id: joi.string().required()
     });
 
-    const {error,value} = idObject.validate(req.body);
+    const {error,value} = idObject.validate(req.query);
 
     if (error) {
         return res.status(400).send(error);
@@ -186,5 +186,39 @@ exports.incrementSalesById = async (_id) => {
         return result;
     } catch (error) {
         return error.message;
+    }
+}
+
+exports.findProductBySearch = async (req, res) => {
+    const SearchObject = joi.object({
+        query: joi.string().required()
+    });
+
+    const { error, value } = SearchObject.validate(req.body);
+
+    if (error) {
+        return res.status(400).send(error);
+    }
+
+    try {
+        await Product.find({ $or: [
+            { 
+                p_product_name: {
+                    $regex: `.*${value.query}*.` 
+                }
+            },
+            { 
+                p_rice_category: {
+                    $regex: `.*${value.query}*.` 
+                }
+            },
+            {
+                p_unit: {
+                    $regex: `.*${value.query}*.`
+                }
+            }
+        ]});
+    } catch (error) {
+        return res.status(400).send(error.message);
     }
 }

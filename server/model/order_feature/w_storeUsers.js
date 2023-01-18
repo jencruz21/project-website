@@ -20,6 +20,7 @@ const StoreUserSchema = new mongoose.Schema({
     su_address_2: {
         type: String,
         trim: true,
+        default: "Default Value"
     },
     su_email: {
         type: String,
@@ -38,6 +39,7 @@ const StoreUserSchema = new mongoose.Schema({
     su_mobile_no: {
         type: Number,
         required: true,
+        unique: true,
         match: ["^(09|\+639)\d{9}$", "Invalid Phone Number"]
     },
     su_city: {
@@ -49,12 +51,7 @@ const StoreUserSchema = new mongoose.Schema({
         required: true,
         max: 9999,
         min: 700
-    },
-    su_country: {
-        type: String,
-        required: true,
-        default: "Philippines"
     }
 });
 
-exports.StoreUser = mongoose.model("storeUser", StoreUserSchema);
+module.exports = mongoose.model("storeUser", StoreUserSchema);

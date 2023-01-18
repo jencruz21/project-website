@@ -7,4 +7,4 @@ const RiceCategorySchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-exports.RiceCategory = mongoose.model("riceCategory", RiceCategorySchema);
+module.exports = mongoose.model("riceCategory", RiceCategorySchema);

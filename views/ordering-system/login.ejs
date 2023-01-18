@@ -1,5 +1,22 @@
 <%- include("include/header.ejs") %>
 <%- include("include/topbar.ejs") %>
 
-
+<div class="container d-flex flex-column align-items-center">
+    <h1 class="text-center my-5">
+        Customer Login
+    </h1>
+    <div class="border border-dark border-5 p-5 w-50">
+        <form action="" method="post">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <label for="email">Email address</label>
+           </div>
+           <div class="form-floating">
+                <input class="form-control mb-3" type="password" name="password" id="password" placeholder="********">
+                <label for="password">Password</label>
+           </div>
+           <input class="btn btn-primary" type="submit" value="Sign-in">
+        </form>
+    </div>
+</div>
 <%- include("include/footer.ejs") %>

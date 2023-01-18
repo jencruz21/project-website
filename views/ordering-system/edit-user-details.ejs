@@ -2,9 +2,7 @@
 <%- include("include/topbar.ejs") %>
 
 <div class="container d-flex flex-column align-items-center">
-    <h1 class="text-center my-5">
-        Customer Registration
-    </h1>
+    <p class="h2 text-center my-5">Edit your details.</p>
     <!-- 
 
         first_name
@@ -18,7 +16,7 @@
         zipcode
      -->
     <div class="border border-dark border-5 p-5 ">
-        <form action="/register" method="post">
+        <form action="/edit" method="post">
             <div class="row row-cols-2">
                 <div class="col-md col-sm-12">
                     <div class="form-floating mb-3">
@@ -42,18 +40,23 @@
                 <label for="password">Password</label>
             </div>
            <div class="form-floating">
-                <input class="form-control mb-3" type="text" name="su_address1" id="su_address1" placeholder="">
-                <label for="password">Address</label>
+                <input class="form-control mb-3" type="text" name="su_address1" id="su_address1" placeholder="Lot 3 Blk 9">
+                <label for="su_address1">Address</label>
            </div>
             <div class="form-floating mb-3">
-                <select class="form-select" name="cities" id="cities">
+                <select class="form-select" name="su_city" id="su_city">
+                    <option selected disabled>SELECT CITY</option>
                     <% cities.forEach(city => {%>
                         <option value="<%= city.name %>"><%= city.name %></option>
                     <% }); %>
                 </select>
                 <label for="cities">City</label>
             </div>
-           <input class="btn btn-primary" type="submit" value="Sign-up">
+            <div class="form-floating">
+                <input class="form-control mb-3" type="text" name="su_zip_code" id="su_zip_code" placeholder="****">
+                <label for="su_zip_code">Zip Code</label>
+           </div>
+           <input class="btn btn-primary" type="submit" value="Update Details">
         </form>
     </div>
 </div>
