@@ -138,3 +138,38 @@ exports.findUsers = async (req, res) => {
         return res.status(400).send(process.env.STATUS_400 + " - " +  error.message);
     }
 }
+
+exports.findUsersBySearch = async (req, res) => {
+    const SearchObject = joi.object({
+        query: joi.string().required()
+    });
+
+    const { error, value } = SearchObject.validate(req.body);
+
+    if (error) {
+        return res.status(400).send(error);
+    }
+
+    try {
+        const response = await StoreUser.find({ $or: [
+            { 
+                su_first_name: {
+                    $regex: `.*${value.query}*.` 
+                }
+            },
+            { 
+                su_last_name: {
+                    $regex: `.*${value.query}*.` 
+                }
+            },
+            {
+                email: {
+                    $regex: `.*${value.query}*.`
+                }
+            }
+        ]});
+        return res.status(200).send(response);
+    } catch (error) {
+        return res.status(400).send(error.message);
+    }
+}

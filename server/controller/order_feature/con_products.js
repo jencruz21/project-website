@@ -116,7 +116,7 @@ exports.updateProductById = async (req, res) => {
 
 exports.fetchAllProducts = async (req, res) => {
     try {
-        const response = await Product.findAll();
+        const response = await Product.find();
         return res.status(200).send(response);
     } catch (error) {
         return res.status(400).send(error.message);
@@ -201,7 +201,7 @@ exports.findProductBySearch = async (req, res) => {
     }
 
     try {
-        await Product.find({ $or: [
+        const response = await Product.find({ $or: [
             { 
                 p_product_name: {
                     $regex: `.*${value.query}*.` 
@@ -218,6 +218,7 @@ exports.findProductBySearch = async (req, res) => {
                 }
             }
         ]});
+        return res.status(200).send(response);
     } catch (error) {
         return res.status(400).send(error.message);
     }

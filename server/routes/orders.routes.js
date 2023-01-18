@@ -42,7 +42,7 @@ router.post("/register", apiService.registerUser);
 router.post("/edit", apiService.updateUser);
 router.get("/edit", apiService.fetchUserForEdit);
 router.get("/users", apiService.fetchUsers);
-router.get("/user", apiService.userDetailsPage);
+router.get("/user", apiService.fetchUser);
 
 // APIs
 
@@ -53,14 +53,15 @@ router.get("/api/products", ProductsController.fetchAllProducts);
 router.get("/api/product", ProductsController.fetchProductById);
 router.get("/api/product/sales", ProductsController.fetchProductsHighestSales);
 router.get("/api/product/arrived", ProductsController.fetchProductsNewlyArrived);
-router.get("/api/product/search", ProductsController.);
+router.get("/api/product/search", ProductsController.findProductBySearch);
 
 // USERS
 router.post("/api/user/register", StoreUsersController.createUser);
 router.post("/api/user/edit", StoreUsersController.updateUserById);
 router.get("/api/user", StoreUsersController.findUserById);
 router.get("/api/users", StoreUsersController.findUsers);
-
+router.get("/api/users/search", StoreUsersController.findUsersBySearch);
 // TRANSACTIONS
+
 
 module.exports = router;
