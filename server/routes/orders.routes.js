@@ -36,7 +36,7 @@ router.get("/login", routeService.loginPage);
 // registration page
 router.get("/register", routeService.registerPage);
 
-
+// PAGES RENDERED DATA
 // Update User
 router.post("/register", apiService.registerUser);
 router.post("/edit", apiService.updateUser);
@@ -45,7 +45,6 @@ router.get("/users", apiService.fetchUsers);
 router.get("/user", apiService.fetchUser);
 
 // APIs
-
 // PRODUCTS 
 router.post("/api/product/post", ProductsController.createProduct);
 router.post("/api/product/edit", ProductsController.updateProductById);
