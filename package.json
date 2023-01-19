@@ -1,7 +1,6 @@
 {
   "name": "jannamercorp",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -28,5 +27,16 @@
     "philippines": "^1.0.0",
     "uuid": "^9.0.0",
     "validator": "^13.7.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jencruz21/project-website.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/jencruz21/project-website/issues"
+  },
+  "homepage": "https://github.com/jencruz21/project-website#readme",
+  "description": ""
 }
