@@ -173,3 +173,7 @@ exports.findUsersBySearch = async (req, res) => {
         return res.status(400).send(error.message);
     }
 }
+
+exports.filterUsers = () => {
+    
+}
